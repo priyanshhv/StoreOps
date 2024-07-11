@@ -2,6 +2,7 @@ package com.laundry.version_one;
 
 import com.laundry.version_one.role.Role;
 import com.laundry.version_one.role.RoleRepository;
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +18,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class VersionOneApplication {
 
 	public static void main(String[] args) {
+		Dotenv dotenv = Dotenv.load();
 		System.out.println("hello world");
 		SpringApplication.run(VersionOneApplication.class, args);
 	}

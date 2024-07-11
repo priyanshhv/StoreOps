@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/laundry_service
-    username: postgres
-    password: priyansh
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -14,10 +14,10 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username: priyansh2v@gmail.com
-    password: ndnuicenmmdmgeyy
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -33,10 +33,10 @@ spring:
 application:
   security:
     jwt:
-      secret-key: kYTpUQ8Pcc3LmYD13+p4OZnBvG1hCDuq8BpClv+NU0isbpjPwxSPhbu5FpBqNoEZ
+      secret-key: ${JWT_SECRET_KEY}
       expiration: 86400000
   mailing:
     frontend:
-      activation-url: http://localhost:4200/activate-account
+      activation-url: ${FRONTEND_ACTIVATION_URL}
 server:
-  port: 8088
+  port: ${SERVER_PORT}
