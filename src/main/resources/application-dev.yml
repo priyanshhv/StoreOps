@@ -7,27 +7,28 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
         format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   mail:
-    host: localhost
-    port: 1025
-    username: any
-    password: any
+    host: smtp.gmail.com
+    port: 587
+    username: priyansh2v@gmail.com
+    password: ndnuicenmmdmgeyy
     properties:
       mail:
         smtp:
-          trust: "*"
-        auth: true
-        starttls:
-          enable: true
-        connectiontimeout: 5000
-        timeout: 3000
-        writetimeout: 5000
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: "*"
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
 
 application:
   security:
